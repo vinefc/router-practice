@@ -3,7 +3,7 @@
     <h1>8 classic children's books</h1>
     <br/>
     <div id="allbooks">
-    <router-link to="/about" v-for="book in books" :key="book.id" id="cover"><h2>{{book.title}}</h2> <p>{{book.author}}</p></router-link>
+    <router-link :to="{ name: 'About', params: {id: book.id } }" v-for="book in books" :key="book.id" id="cover"><h2>{{book.title}}</h2> <p>{{book.author}}</p></router-link>
     </div>
 
   

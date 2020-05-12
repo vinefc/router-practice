@@ -3,7 +3,7 @@
     <h1>8 classic children's books</h1>
     <br/>
     <div id="allbooks">
-    <router-link to="/" ><h2>{{books[1].title}}</h2> <p>{{books[0].author}}</p> <br/> <p>{{books[0].plot}}</p></router-link>
+    <router-link to="/" ><h2>{{book.title}}</h2> <p>{{book.author}}</p> <br/> <p>{{book.plot}}</p></router-link>
     </div>
 
   
@@ -22,8 +22,14 @@ export default {
   },
   data(){
     return{
-      books : books.books
+      book : books.books.find(b => b.id ===this.$route.params.id)
     }
+  },
+
+  created(){
+    console.log('id');
+    console.log( this.$route.params.id );
+    
   }
 }
 </script>
